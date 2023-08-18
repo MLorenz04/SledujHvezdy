@@ -1,0 +1,74 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+html #root,
+body #root {
+  width: inherit;
+  height: inherit;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background: rgb(63, 60, 60);
+  background: linear-gradient(180deg, rgb(59, 56, 56) 35%, rgb(34, 34, 34) 100%);
+}
+
+.menu_list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+}
+.menu_list_item {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.mainPage {
+  height: calc(100% - 100px);
+  background-color: #222222;
+}
+
+.main {
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+  background-color: #222222;
+}
+.main_page {
+  height: 100%;
+  width: calc(100% - 250px);
+}
+.main_sidebar {
+  border-left: 2px solid white;
+  height: 100%;
+  width: 250px;
+}
+.main_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.main_container_form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+.main_container_form input {
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+.main_container_form textarea {
+  width: 100%;
+}/*# sourceMappingURL=layout.css.map */

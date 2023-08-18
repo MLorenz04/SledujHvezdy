@@ -1,0 +1,10 @@
+{
+  "stars": [
+    {
+      "title": "Polárka",
+      "desc": "Nejzářivější hvězda oblohy",
+      "img": "../src/images/polaris.png",
+      "id": 1
+    }
+  ]
+}
