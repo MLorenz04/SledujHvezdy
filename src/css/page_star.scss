@@ -1,0 +1,35 @@
+.stars {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &_star {
+    height: 350px;
+
+    &_image {
+      margin: auto;
+      height: 150px;
+      width: 150px;
+      border-radius: 75px;
+      -webkit-border-radius: 75px;
+      -moz-border-radius: 75px;
+      -ms-border-radius: 75px;
+      -o-border-radius: 75px;
+    }
+
+    &_title {
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 1rem;
+    }
+    
+    &_desc {
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+
+    &_const {
+      text-align: center;
+    }
+  }
+}

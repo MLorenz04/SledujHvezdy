@@ -1,10 +1,30 @@
 {
   "stars": [
     {
-      "title": "Polárka",
-      "desc": "Nejzářivější hvězda oblohy",
-      "img": "../src/images/polaris.png",
-      "id": 1
+      "title": "asxasx",
+      "const": "asd",
+      "desc": "asxasxasx",
+      "img": "/images/91120853_615074805738002_6930836494181466112_n.jpgwlyrv.jpg",
+      "id": 2
+    },
+    {
+      "title": "asxasx",
+      "const": "xasx",
+      "desc": "asxasxasx",
+      "img": "/images/117358809_734731650424719_4712306292711188213_n.jpgwlyrv.jpg",
+      "id": 3
+    },
+    {
+      "title": "Asdasdasdasx",
+      "cons": "Asddsdasdasd",
+      "desc": "asxasxasdasxax",
+      "img": "/images/91524267_222445055536033_6519076188512583680_n.jpgrx7pl.jpg",
+      "id": 4
+    }
+  ],
+  "constellations": [
+    {
+      "constellation": ""
     }
   ]
 }

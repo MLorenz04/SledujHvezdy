@@ -2,10 +2,10 @@ import { React, useState, Fragment } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { path_srv } from "../config";
-export default function NewStar() {
+export default function NewPlanet() {
   const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [cons, setCons] = useState("");
+  const [content, setContent] = useState("");
+  const [nickname, setNickname] = useState("");
   const [renamedFile, setRenamedFile] = useState("");
   const [hash, setHash] = useState(
     (Math.random() + 3).toString(36).substring(7)
@@ -20,18 +20,17 @@ export default function NewStar() {
     );
     e.preventDefault();
     var fd = new FormData();
-    var img = "/images/stars/" + renamedFile.name;
-    var star = { title, cons, desc, img };
+    var img = "/images/planets" + renamedFile.name;
+    var planet = { title, nickname, content, img };
     fd.append("photo", renamedFile);
-    fd.append("star", JSON.stringify(star));
+    fd.append("planet", JSON.stringify(planet));
     try {
-      axios.post(path_srv + "/api/v1/star", fd);
+      axios.post(path_srv + "/api/v1/planet", fd);
       Swal.fire({
         title: "Hvězda přidána!",
         icon: "success",
       });
     } catch (error) {
-      console.error("Chyba při odesílání:", error);
       Swal.fire({
         title: "Hvězdu se nepodařilo přidat",
         icon: "error",
@@ -43,26 +42,26 @@ export default function NewStar() {
       <div className="main">
         <div className="main_container">
           <form className="main_container_form" onSubmit={handleSubmit}>
-            <label> Název hvězdy </label>
+            <label> Název planety </label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-            <label> Souhvězdí </label>
+            <label> Přezdívka </label>
             <input
               type="text"
               required
-              value={cons}
-              onChange={(e) => setCons(e.target.value)}
+              value={nickname}
+              onChange={(e) => setNickname(e.target.value)}
             />
             <label> Popisek </label>
             <textarea
               required
-              value={desc}
-              onChange={(e) => setDesc(e.target.value)}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
             ></textarea>
-            <label> Soubor </label>
+            <label> Náhled </label>
             <input
               type="file"
               required

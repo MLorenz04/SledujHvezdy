@@ -1,8 +1,8 @@
-import { React, Fragment} from "react";
+import { React} from "react";
 export default function Souhvezdi() {
   return (
-    <Fragment>
+    <div className="main">
       <h1> Souhvezdi ! </h1>
-    </Fragment>
+    </div>
   );
 }

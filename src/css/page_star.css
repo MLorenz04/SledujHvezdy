@@ -1,0 +1,30 @@
+.stars {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.stars_star {
+  height: 350px;
+}
+.stars_star_image {
+  margin: auto;
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  -ms-border-radius: 75px;
+  -o-border-radius: 75px;
+}
+.stars_star_title {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+.stars_star_desc {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.stars_star_const {
+  text-align: center;
+}/*# sourceMappingURL=page_star.css.map */
