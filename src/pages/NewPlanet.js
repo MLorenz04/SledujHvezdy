@@ -20,7 +20,7 @@ export default function NewPlanet() {
     );
     e.preventDefault();
     var fd = new FormData();
-    var img = "/images/planets" + renamedFile.name;
+    var img = "/images/planets/" + renamedFile.name;
     var planet = { title, nickname, content, img };
     fd.append("photo", renamedFile);
     fd.append("planet", JSON.stringify(planet));

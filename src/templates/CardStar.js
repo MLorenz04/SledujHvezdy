@@ -1,4 +1,4 @@
-export const Card = ({ cardData }) => (
+export const CardStar = ({ cardData }) => (
   <div className="card stars_star" style={{ width: "18rem" }}>
     <h5 className="card-title stars_star_title">{cardData.title}</h5>
     <p className="card-text stars_star_const">{cardData.const}</p>
@@ -8,6 +8,5 @@ export const Card = ({ cardData }) => (
       alt="Card image cap"
     />
     <p className="card-text stars_star_desc">{cardData.desc}</p>
-    
   </div>
 );

@@ -1,4 +1,4 @@
-import { Card } from "../templates/Card";
+import { CardPlanet } from "../templates/CardPlanet";
 import { React, useEffect, useState, Fragment } from "react";
 import { path_srv } from "../config";
 import "../css/page_star.css";
@@ -18,7 +18,7 @@ export default function Planets() {
     <div className="main">
       <h1> Planety </h1>
       <div className="container stars">
-        {planet && planet.map((cardData) => <Card cardData={cardData} />)}
+        {planet && planet.map((cardData) => <CardPlanet cardData={cardData} />)}
       </div>
     </div>
   );
