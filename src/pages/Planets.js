@@ -18,7 +18,7 @@ export default function Planets() {
     <div className="main">
       <h1> Planety </h1>
       <div className="container stars">
-        {planet && planet.map((cardData) => <CardPlanet cardData={cardData} />)}
+        {planet && planet.map((cardData, i) => <CardPlanet key={i} cardData={cardData} />)}
       </div>
     </div>
   );

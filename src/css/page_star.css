@@ -5,6 +5,7 @@
 }
 .stars_star {
   height: 350px;
+  background: rgba(255, 255, 255, 0.775);
 }
 .stars_star_image {
   margin: auto;

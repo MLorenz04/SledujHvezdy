@@ -14,6 +14,8 @@ import NewStar from "./NewStar";
 import Planets from "./Planets";
 import NewPlanet from "./NewPlanet";
 import { GalaxyBackground } from "../3d/Experience";
+import Single from "./SingleStar";
+import Error404 from "./404";
 /* Main function creating MainPage */
 function App() {
   const [loading, setLoading] = useState(false);
@@ -27,12 +29,14 @@ function App() {
         <Header />
         <div className="page_content">
           <Routes>
+            <Route path="/404" element={<Error404/>}></Route>
             <Route path="/" element={<Homepage />}></Route>
             <Route path="/planety" element={<Planets />}></Route>
             <Route path="/hvezdy" element={<Hvezdy />}></Route>
             <Route path="/souhvezdi" element={<Souhvezdi />}></Route>
             <Route path="/pridatHvezdu" element={<NewStar />}></Route>
             <Route path="/pridatPlanetu" element={<NewPlanet />}></Route>
+            <Route path="/hvezda/:short" element={<Single />}></Route>
           </Routes>
           <div className={loading ? "overlay loaded" : "overlay"}></div>
         </div>

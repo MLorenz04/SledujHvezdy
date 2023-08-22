@@ -16,7 +16,7 @@ export default function Hvezdy() {
   }, []);
   return (
     <div className="main">
-      <h1> Hvezdicky !</h1>
+      <h1> Hvězdy</h1>
       <div className="container stars">
         {stars && stars.map((cardData) => <CardStar cardData={cardData} />)}
       </div>

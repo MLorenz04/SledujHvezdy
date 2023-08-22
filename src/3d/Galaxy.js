@@ -7,19 +7,25 @@ Source: https://sketchfab.com/3d-models/need-some-space-d6521362b37b48e3a82bce49
 Title: Need some space?
 */
 
-import React, { useRef, useFrame } from "react";
+import React, { useRef, useFrame, useLayoutEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import { Canvas } from "@react-three/fiber";
-
+import Cookies from "universal-cookie";
+import { path_page } from "../config";
 export function GalaxyMesh(props) {
-  const { nodes, materials } = useGLTF("./models/scene.gltf");
+  const cookies = new Cookies();
+  const { nodes, materials } = useGLTF(path_page + "/models/scene.gltf");
   const { gl, camera } = useThree();
   var start_x = 3.207;
-  var start_y = 2.794;
+  var start_y = 3.294;
   var start_z = -3.636;
-  camera.position.x = start_x;
-  camera.position.y = start_y;
+  if (cookies.get("cords") == null) {
+    camera.position.x = start_x;
+    camera.position.y = start_y;
+  } else {
+    camera.position.x = cookies.get("cords")[0];
+    camera.position.y = cookies.get("cords")[1];
+  }
   camera.position.z = start_z;
   window.addEventListener("mousemove", (e) => {
     const maxMovement = 0.5;
@@ -38,16 +44,15 @@ export function GalaxyMesh(props) {
     );
     camera.position.x = start_x + clampedCameraMovement_x;
     camera.position.y = start_y + clampedCameraMovement_y;
+    cookies.set("cords", [camera.position.x, camera.position.y], { path: "/" });
   });
   window.addEventListener("click", (e) => {
-    console.log("click");
     let pos = {
       x: camera.position.x,
       y: camera.position.y,
       z: camera.position.z,
       scale: camera.scale,
     };
-    console.log(pos);
   });
 
   return (
@@ -64,4 +69,4 @@ export function GalaxyMesh(props) {
 
 export const Galaxy = () => <GalaxyMesh />;
 
-useGLTF.preload("./models/scene.gltf");
+useGLTF.preload(path_page + "/models/scene.gltf");

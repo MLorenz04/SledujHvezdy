@@ -8,6 +8,8 @@ const app = express();
 const cors = require("cors");
 const port = 3001;
 const mysql = require("mysql");
+const createShort = require("../src/functions/modifyString");
+require("../src/functions/modifyString");
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -39,14 +41,15 @@ const planet_storage = multer({
 
 /* Api na přidání hvězdy */
 app.post("/api/v1/star", star_storage.single("photo"), (req, res) => {
+  console.log(req.body);
   const star = JSON.parse(req.body.star);
+  const short = createShort(star.title);
+  console.log(short);
   res.status(200).json({ message: "File saved" });
-  db.query("INSERT INTO stars (title, const, content, img) VALUES (?,?,?,?)", [
-    star.title,
-    star.cons,
-    star.desc,
-    star.img,
-  ]);
+  db.query(
+    "INSERT INTO stars (title, const, content, img, short) VALUES (?,?,?,?,?)",
+    [star.title, star.cons, star.desc, star.img, short]
+  );
 });
 
 /* Select hvězd */
@@ -60,10 +63,11 @@ app.get("/api/v1/stars", (req, res) => {
 /* Vložení planety */
 app.post("/api/v1/planet", planet_storage.single("photo"), (req, res) => {
   const planet = JSON.parse(req.body.planet);
+  const short = createShort(planet.title);
   res.status(200).json({ message: "File saved" });
   db.query(
-    "INSERT INTO planets (title, nickname, content, img) VALUES (?,?,?,?)",
-    [planet.title, planet.nickname, planet.content, planet.img]
+    "INSERT INTO planets (title, short, nickname, content, img) VALUES (?,?,?,?)",
+    [planet.title, short, planet.nickname, planet.content, planet.img]
   );
 });
 
@@ -72,6 +76,16 @@ app.get("/api/v1/planets", (req, res) => {
   db.query("SELECT * FROM planets", (err, rows) => {
     if (err) throw err;
     res.json(rows);
+  });
+});
+
+app.get("/api/v1/hvezda/:name", (req, res) => {
+  const short = req.params.name;
+  console.log(short);
+  db.query("SELECT * FROM stars where short ='" + short + "'", (err, rows) => {
+    rows.length > 0
+      ? res.status(200).json(rows)
+      : res.status(400).send("Hvezda nenalezena");
   });
 });
 

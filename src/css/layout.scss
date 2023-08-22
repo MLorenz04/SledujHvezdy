@@ -27,7 +27,7 @@ body {
 .page {
   width: 100%;
   height: calc(100% - $menu-height);
-  padding-bottom:$menu-height;
+  padding-bottom: $menu-height;
   &_content {
     width: 100%;
     height: 100%;
@@ -74,6 +74,9 @@ Canvas {
   width: 100%;
   height: 100%;
 
+  h1 {
+    font-size: 8rem;
+  }
   &_page {
     height: 100%;
     width: 100%;
