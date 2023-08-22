@@ -12,7 +12,6 @@ const navigate = useNavigate();
       fetch(path_srv + "/api/v1/hvezda/" + short)
         .then((res) => res.json()) // Store the returned JSON data
         .then((data) => {
-          console.log(data);
           setData(data[0]);
         })
         .catch((error) => {

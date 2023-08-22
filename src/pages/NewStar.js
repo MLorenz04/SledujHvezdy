@@ -24,7 +24,6 @@ export default function NewStar() {
     var star = { title, cons, desc, img };
     fd.append("photo", renamedFile);
     fd.append("star", JSON.stringify(star));
-    console.log(fd);
     try {
       axios.post(path_srv + "/api/v1/star", fd);
       Swal.fire({
