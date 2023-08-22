@@ -41,10 +41,8 @@ const planet_storage = multer({
 
 /* Api na přidání hvězdy */
 app.post("/api/v1/star", star_storage.single("photo"), (req, res) => {
-  console.log(req.body);
   const star = JSON.parse(req.body.star);
   const short = createShort(star.title);
-  console.log(short);
   res.status(200).json({ message: "File saved" });
   db.query(
     "INSERT INTO stars (title, const, content, img, short) VALUES (?,?,?,?,?)",
@@ -81,7 +79,6 @@ app.get("/api/v1/planets", (req, res) => {
 
 app.get("/api/v1/hvezda/:name", (req, res) => {
   const short = req.params.name;
-  console.log(short);
   db.query("SELECT * FROM stars where short ='" + short + "'", (err, rows) => {
     rows.length > 0
       ? res.status(200).json(rows)
