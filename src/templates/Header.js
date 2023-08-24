@@ -1,5 +1,10 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
+/**
+ * Komponent menu na stárnce
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export const Header = () => (
   <div className="header">
     <div className="menu">
