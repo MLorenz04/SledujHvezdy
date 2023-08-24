@@ -2,6 +2,11 @@ import { React, useState, Fragment } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { path_srv } from "../config";
+/**
+ * Komponent stránky pro vytváření hvězd
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export default function NewStar() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");

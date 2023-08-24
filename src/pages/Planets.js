@@ -2,6 +2,11 @@ import { CardPlanet } from "../templates/CardPlanet";
 import { React, useEffect, useState, Fragment } from "react";
 import { path_srv } from "../config";
 import "../css/page_star.css";
+/**
+ * Komponent stránky vykreslující planety z databáze
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export default function Planets() {
   const [planet, setPlanet] = useState(null);
   useEffect(() => {

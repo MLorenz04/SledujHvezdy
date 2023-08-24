@@ -1,5 +1,10 @@
+/**
+ * Vytvoří short-url z názvu příspěvku
+ * @param {} input Název příspěvku
+ * @returns Short název
+ * @author Matyáš Lorenz
+ */
 const createShort = (input) => {
-  // Odstranění háčků a čárek
   const stripped = input.replace(
     /[áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/g,
     (match) => {
@@ -38,10 +43,7 @@ const createShort = (input) => {
       return replacements[match];
     }
   );
-
-  // Nahrazení mezer podtržítky
   const modified = stripped.replace(/\s+/g, "_");
-
   return modified;
-}
+};
 module.exports = createShort;

@@ -16,10 +16,13 @@ import NewPlanet from "./NewPlanet";
 import { GalaxyBackground } from "../3d/Experience";
 import Single from "./SingleStar";
 import Error404 from "./404";
-/* Main function creating MainPage */
+/**
+ * Hlavní spouštěč celé stránky
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 function App() {
   const [loading, setLoading] = useState(false);
-  /* Routes are handling what content is displayed based on provided route */
   return (
     <div className="App">
       <div className="background">

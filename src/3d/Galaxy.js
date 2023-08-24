@@ -12,6 +12,12 @@ import { useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import Cookies from "universal-cookie";
 import { path_page } from "../config";
+/**
+ * Komponent Galaxie, který slouží jako pozadí
+ * @param {*} props Vstupní parametry pro vykreslení
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export function GalaxyMesh(props) {
   const cookies = new Cookies();
   const { nodes, materials } = useGLTF(path_page + "/models/scene.gltf");
