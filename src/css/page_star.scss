@@ -1,12 +1,20 @@
-.stars {
+.blogs {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  &_star {
+  &_blog {
     height: 350px;
-    background: rgba(255,255,255,0.775);
+    background: rgba(255, 255, 255, 0.775);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+    a {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     &_image {
       margin: auto;
       height: 150px;
@@ -19,17 +27,20 @@
     }
 
     &_title {
+      color: black;
       font-size: 2rem;
       text-align: center;
       padding-top: 1rem;
     }
-    
+
     &_desc {
+      color: black;
       text-align: center;
       padding-bottom: 2rem;
     }
 
     &_const {
+      color: black;
       text-align: center;
     }
   }

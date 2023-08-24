@@ -13,9 +13,6 @@ export const Header = () => (
         <Link to="/hvezdy" relative="path">
           <li className="menu_list_item">Hvězdy</li>
         </Link>
-        <Link to="/souhvezdi" relative="path">
-          <li className="menu_list_item">Souhvězdí</li>
-        </Link>
         <Link to="/pridatHvezdu" relative="path">
           <li className="menu_list_item">Přidat hvězdu</li>
         </Link>

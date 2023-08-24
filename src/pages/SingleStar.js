@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { path_srv } from "../config";
 import { useParams, useNavigate } from "react-router-dom";
 
-export default function Single() {
-  
-const navigate = useNavigate();
+export default function Single(props) {
+  console.log(props);
+  const navigate = useNavigate();
   const { short } = useParams();
-  const [data, setData] = useState(null); // Changed initial state to null
+  const [data, setData] = useState(null);
   useEffect(() => {
     try {
-      fetch(path_srv + "/api/v1/hvezda/" + short)
-        .then((res) => res.json()) // Store the returned JSON data
+      fetch(path_srv + "/api/v1/" + props.type + "/" + short)
+        .then((res) => res.json())
         .then((data) => {
           setData(data[0]);
         })
@@ -29,7 +29,7 @@ const navigate = useNavigate();
           <p>{data.description}</p>
         </>
       ) : (
-        <p>Loading...</p>
+        <p/>
       )}
     </div>
   );

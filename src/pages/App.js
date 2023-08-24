@@ -36,7 +36,8 @@ function App() {
             <Route path="/souhvezdi" element={<Souhvezdi />}></Route>
             <Route path="/pridatHvezdu" element={<NewStar />}></Route>
             <Route path="/pridatPlanetu" element={<NewPlanet />}></Route>
-            <Route path="/hvezda/:short" element={<Single />}></Route>
+            <Route path="/hvezda/:short" element={<Single type="hvezda" />}></Route>
+            <Route path="/planeta/:short" element={<Single type="planeta"/>}></Route>
           </Routes>
           <div className={loading ? "overlay loaded" : "overlay"}></div>
         </div>

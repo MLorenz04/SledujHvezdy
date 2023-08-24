@@ -64,7 +64,7 @@ app.post("/api/v1/planet", planet_storage.single("photo"), (req, res) => {
   const short = createShort(planet.title);
   res.status(200).json({ message: "File saved" });
   db.query(
-    "INSERT INTO planets (title, short, nickname, content, img) VALUES (?,?,?,?)",
+    "INSERT INTO planets (title, short, nickname, content, img) VALUES (?,?,?,?,?)",
     [planet.title, short, planet.nickname, planet.content, planet.img]
   );
 });
@@ -76,13 +76,23 @@ app.get("/api/v1/planets", (req, res) => {
     res.json(rows);
   });
 });
-
+/* Get hvězdy */ 
 app.get("/api/v1/hvezda/:name", (req, res) => {
   const short = req.params.name;
   db.query("SELECT * FROM stars where short ='" + short + "'", (err, rows) => {
     rows.length > 0
       ? res.status(200).json(rows)
       : res.status(400).send("Hvezda nenalezena");
+  });
+});
+
+/* Get hvězdy */ 
+app.get("/api/v1/planeta/:name", (req, res) => {
+  const short = req.params.name;
+  db.query("SELECT * FROM planets where short ='" + short + "'", (err, rows) => {
+    rows.length > 0
+      ? res.status(200).json(rows)
+      : res.status(400).send("Planeta nenalezena");
   });
 });
 

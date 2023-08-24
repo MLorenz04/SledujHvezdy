@@ -16,7 +16,7 @@ export function GalaxyMesh(props) {
   const cookies = new Cookies();
   const { nodes, materials } = useGLTF(path_page + "/models/scene.gltf");
   const { gl, camera } = useThree();
-  var start_x = 3.207;
+  var start_x = 3.557;
   var start_y = 3.294;
   var start_z = -3.636;
   if (cookies.get("cords") == null) {
