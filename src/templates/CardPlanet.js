@@ -1,15 +1,19 @@
+import { Link } from "react-router-dom";
+
 export const CardPlanet = ({ cardData }) => (
-    <div className="card stars_star" style={{ width: "18rem" }}>
-      <h5 className="card-title stars_star_title">
+    <div className="card blogs_blog" style={{ width: "18rem" }}>
+      <Link to={"/planeta/" + cardData.short} relative="path">
+      <h5 className="card-title blogs_blog_title">
         {cardData.title}
       </h5>
-      <p className="card-text stars_star_const">{cardData.nickname}</p>
+      <p className="card-text blogs_blog_const">{cardData.nickname}</p>
       <img
-        className="card-img-top stars_star_image"
+        className="card-img-top blogs_blog_image"
         src={cardData.img}
         alt="Card image cap"
       />
-      <p className="card-text stars_star_desc">{cardData.content}</p>
+      <p className="card-text blogs_blog_desc">{cardData.content}</p>
+      </Link>
     </div>
   );
   
