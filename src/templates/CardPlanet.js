@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-
+/**
+ * Karta pro vykreslení příspěvku v sekci Planet
+ * @param {*} cardData Data objektu
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export const CardPlanet = ({ cardData }) => (
     <div className="card blogs_blog" style={{ width: "18rem" }}>
       <Link to={"/planeta/" + cardData.short} relative="path">

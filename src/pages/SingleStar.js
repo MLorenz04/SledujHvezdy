@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { path_srv } from "../config";
 import { useParams, useNavigate } from "react-router-dom";
-
+/**
+ * Jednotlivá stránka pro zobrazení příspěvku
+ * @param {*} props Příspěvek na vykreslení
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export default function Single(props) {
   console.log(props);
   const navigate = useNavigate();

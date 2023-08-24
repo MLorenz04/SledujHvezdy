@@ -2,6 +2,11 @@ import { React, useState, Fragment } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { path_srv } from "../config";
+/**
+ * Komponent stránky pro vytváření planet
+ * @returns Export komponentu
+ * @author Matyáš Lorenz
+ */
 export default function NewPlanet() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
