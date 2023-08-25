@@ -41,6 +41,7 @@ function App() {
             <Route path="/pridatPlanetu" element={<NewPlanet />}></Route>
             <Route path="/hvezda/:short" element={<Single type="hvezda" />}></Route>
             <Route path="/planeta/:short" element={<Single type="planeta"/>}></Route>
+            <Route path="*" element={<Error404/>}></Route>
           </Routes>
           <div className={loading ? "overlay loaded" : "overlay"}></div>
         </div>
