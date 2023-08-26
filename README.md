@@ -1,6 +1,6 @@
 # Sleduj hvězdy
 
-První React projekt
+Sleduj hvězdy je projekt zaměřující se na fanoušky vesmíru. Probírá a zpracovává obsáhlá témata, která nemusí být jednoduchá na pochopení do jednoduchých článků. Vykreslování 3D obrazců a modelů na stránce zároveň uklidňuje uživatelovo oko a jeho mysl spočine na kráse vesmíru a jeho tajemství.
 
 ## Jak spustit
 
