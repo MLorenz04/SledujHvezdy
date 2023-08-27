@@ -17,6 +17,7 @@ body #root {
 }
 
 .background {
+  background-color: #1a1a1a;
   position: absolute;
   width: inherit;
   height: inherit;
@@ -60,10 +61,6 @@ body #root {
 
 .mainPage {
   height: 100%;
-}
-
-Canvas {
-  background-color: #1a1a1a;
 }
 
 .main {
