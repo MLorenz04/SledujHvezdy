@@ -8,8 +8,7 @@ const app = express();
 const cors = require("cors");
 const port = 3001;
 const mysql = require("mysql");
-const createShort = require("../src/functions/modifyString");
-require("../src/functions/modifyString");
+const createShort = require("../src/functions/modifyString")
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
